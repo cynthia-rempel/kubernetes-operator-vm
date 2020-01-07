@@ -1,4 +1,5 @@
 #!/bin/bash -x
+# Reference: https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md
 
 git clone https://github.com/operator-framework/operator-marketplace.git
 git clone https://github.com/operator-framework/operator-courier.git
