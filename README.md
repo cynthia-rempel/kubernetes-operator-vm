@@ -4,8 +4,8 @@ Automate setting up a kubernetes operator development machine.
 ## Installing Centos 8
 
 1. Enable eth0
-2. Set up the repo by excluding the version.  Example:
+2. Set up the repo.  Example:
 
 ```
-ftp://ftp.osuosl.org/pub/centos/
+http://ftp.osuosl.org/pub/centos/8.0.1905/BaseOS/x86_64/os/
 ```
