@@ -9,3 +9,8 @@ Automate setting up a kubernetes operator development machine.
 ```
 http://ftp.osuosl.org/pub/centos/8.0.1905/BaseOS/x86_64/os/
 ```
+
+3. Software setup:
+
+  a. Server with GUI
+  b. Guest Agents
