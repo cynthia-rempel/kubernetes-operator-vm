@@ -7,6 +7,8 @@ git clone https://github.com/operator-framework/operator-lifecycle-manager.git
 
 pip3 install operator-courier
 
+alias docker='podman'
+
 # Get a Kubernetes cluster
 minikube start
 
