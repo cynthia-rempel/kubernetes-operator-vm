@@ -2,8 +2,11 @@
 # Reference: https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md
 
 yum -y install \
+  dnf-utils \
   git \
   podman-docker
+
+# Install docker.service
 
 # Install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
