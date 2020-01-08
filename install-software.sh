@@ -1,6 +1,10 @@
 #!/bin/bash -x
 # Reference: https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md
 
+yum -y install \
+  git \
+  podman-docker
+
 # Install kubectl
 curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 chmod +x ./kubectl
@@ -14,8 +18,6 @@ git clone https://github.com/operator-framework/operator-courier.git
 git clone https://github.com/operator-framework/operator-lifecycle-manager.git
 
 pip3 install operator-courier
-
-alias docker='podman'
 
 # Get a Kubernetes cluster
 minikube start
