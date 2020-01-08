@@ -1,6 +1,14 @@
 #!/bin/bash -x
 # Reference: https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md
 
+# Install kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mv ./kubectl /usr/local/bin/kubectl
+
+# Test kubectl
+kubectl version
+
 git clone https://github.com/operator-framework/operator-marketplace.git
 git clone https://github.com/operator-framework/operator-courier.git
 git clone https://github.com/operator-framework/operator-lifecycle-manager.git
