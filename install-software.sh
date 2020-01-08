@@ -13,6 +13,11 @@ mv ./kubectl /usr/local/bin/kubectl
 # Test kubectl
 kubectl version
 
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
+  && chmod +x minikube \
+  && mv minikube /usr/local/bin \
+  && /usr/local/bin/minikube start --vm-driver=none
+
 git clone https://github.com/operator-framework/operator-marketplace.git
 git clone https://github.com/operator-framework/operator-courier.git
 git clone https://github.com/operator-framework/operator-lifecycle-manager.git
