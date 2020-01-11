@@ -25,6 +25,9 @@ systemctl stop swap.target
 systemctl disable swap.target
 yum -y install socat
 
+modprobe br_netfilter
+sysctl net.bridge.bridge-nf-call-iptables=1
+
 # Test kubectl
 kubectl version
 
