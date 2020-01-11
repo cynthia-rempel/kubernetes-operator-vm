@@ -1,7 +1,10 @@
 #!/bin/bash -x
 # Reference: https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md
+dnf config-manager --add-repo https://cbs.centos.org/repos/paas7-crio-311-candidate/x86_64/os/
+echo "gpgcheck=0" >> /etc/yum.repos.d/cbs.centos.org_repos_paas7-crio-311-candidate_x86_64_os_.repo 
 
 yum -y install \
+  cri-o \
   dnf-utils \
   git \
   podman-docker
