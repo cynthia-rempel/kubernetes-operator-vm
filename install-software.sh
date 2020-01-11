@@ -13,6 +13,14 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s http
 chmod +x ./kubectl
 mv ./kubectl /usr/local/bin/kubectl
 
+# This service doesn't do anything, but it has to be running
+sudo systemctl start docker.service
+
+# Tell the minikube we're not using docker for the container engine
+touch /etc/containers/nodocker
+
+systemctl enable kubelet.service
+
 # Test kubectl
 kubectl version
 
