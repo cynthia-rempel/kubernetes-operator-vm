@@ -14,12 +14,14 @@ EOF
 
 yum -y install \
   cri-o \
+  crictl \
   dnf-utils \
   git \
   kubectl \
   podman-docker
-  
-sed s'/seccomp_profile.*/seccomp_profile = "/etc/crio/seccomp.json"/' -i /etc/crio/crio.conf
+ 
+# change the service file instead
+# sed s'/seccomp_profile.*/seccomp_profile = "/etc/crio/seccomp.json"/' -i /etc/crio/crio.conf
 
 
 # This service doesn't do anything, but it has to be running
