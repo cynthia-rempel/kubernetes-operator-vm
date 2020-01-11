@@ -18,7 +18,7 @@ yum -y install \
   git \
   kubectl \
   podman-docker
-
+yum -y install https://github.com/kubernetes/minikube/releases/download/v1.6.2/minikube-1.6.2.rpm
 # This service doesn't do anything, but it has to be running
 sudo systemctl start docker.service
 
