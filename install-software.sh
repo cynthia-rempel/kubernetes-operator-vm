@@ -21,6 +21,10 @@ touch /etc/containers/nodocker
 
 systemctl enable kubelet.service
 
+systemctl stop swap.target 
+systemctl disable swap.target
+yum -y install socat
+
 # Test kubectl
 kubectl version
 
