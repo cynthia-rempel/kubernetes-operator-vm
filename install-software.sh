@@ -2,19 +2,22 @@
 # Reference: https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md
 dnf config-manager --add-repo https://cbs.centos.org/repos/paas7-crio-311-candidate/x86_64/os/
 echo "gpgcheck=0" >> /etc/yum.repos.d/cbs.centos.org_repos_paas7-crio-311-candidate_x86_64_os_.repo 
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+EOF
 
 yum -y install \
   cri-o \
   dnf-utils \
   git \
+  kubectl \
   podman-docker
-
-# Install docker.service
-
-# Install kubectl
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-mv ./kubectl /usr/local/bin/kubectl
 
 # This service doesn't do anything, but it has to be running
 sudo systemctl start docker.service
