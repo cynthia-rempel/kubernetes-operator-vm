@@ -1,0 +1,10 @@
+Unit]
+Description=Stub Docker Service
+After=network.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sleep 3600
+
+[Install]
+WantedBy=multi-user.target
