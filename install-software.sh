@@ -50,7 +50,6 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
   && mv minikube /usr/local/bin \
   && /usr/local/bin/minikube start \
     --vm-driver=none \
-    --extra-config=kubeadm.ignore-preflight-errors=IsDockerSystemdCheck,SystemVerification \
     --network-plugin=cni \
     --enable-default-cni \
     --container-runtime=cri-o \
