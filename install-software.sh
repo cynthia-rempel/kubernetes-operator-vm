@@ -18,7 +18,8 @@ yum -y install \
   dnf-utils \
   git \
   kubectl \
-  podman-docker
+  podman-docker \
+  socat
  
 # change the service file instead
 # sed s'/seccomp_profile.*/seccomp_profile = "/etc/crio/seccomp.json"/' -i /etc/crio/crio.conf
