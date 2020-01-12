@@ -14,13 +14,15 @@ EOF
 
 yum -y install \
   cri-o \
-  crictl \
   dnf-utils \
   git \
   kubectl \
   podman-docker \
   socat
- 
+ VERSION="v1.17.0"
+wget https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz
+sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
+rm -f crictl-$VERSION-linux-amd64.tar.gz
 # change the /usr/lib/systemd/system/crio.service file instead --seccomp-profile=/etc/crio/seccomp.json
 # sed s'/seccomp_profile.*/seccomp_profile = "/etc/crio/seccomp.json"/' -i /etc/crio/crio.conf
 
