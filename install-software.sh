@@ -16,6 +16,7 @@ yum -y install \
   cri-o \
   dnf-utils \
   git \
+  kubeadm \
   kubectl \
   podman-docker \
   socat
