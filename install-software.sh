@@ -21,7 +21,7 @@ yum -y install \
   podman-docker \
   socat
  
-# change the service file instead
+# change the /usr/lib/systemd/system/crio.service file instead --seccomp-profile=/etc/crio/seccomp.json
 # sed s'/seccomp_profile.*/seccomp_profile = "/etc/crio/seccomp.json"/' -i /etc/crio/crio.conf
 
 
