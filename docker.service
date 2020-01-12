@@ -1,4 +1,4 @@
-Unit]
+[Unit]
 Description=Stub Docker Service
 After=network.service
 
